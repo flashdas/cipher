@@ -5,28 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cipher</title>
     <link rel="stylesheet" href="styles.css">
-    <!--
+    <!--<script type="text/javascript" src="cipher.js"></script>-->
     <link rel="icon" type="image/png" href="favicon.png">
-    -->
+    
+    <script type="text/javascript">
+    function js(){
+        var key = document.getElementById("cipherKey").value;
+        var text = document.getElementById("cipherText").value;
+
+        var out = key + text;
+        
+        document.getElementById("outputText").innerHTML = out;
+    }
+    </script>
+
 </head>
+
 <body>
-    <h1>h1 text here</h1>
+    <h1>A primative Vigenère cipher solver</h1>
     <p>Hello world!</p>
     <br><br>
     <form>
-        <label for="cipherKey">Cipher Key:</label>
+        <label for="cipherKey">Cipher Key:</label><br>
         <input type="text" id="cipherKey" name="cipherKey">
         <br><br>
-        <label for="cipherText">Cipher text:</label>
-        <textarea id="cipherText" name="cipherText"></textarea>
+
+        <label for="cipherText">Text:</label><br>
+        <textarea id="cipherText" name="cipherText" rows="6" cols="80"></textarea>
         <br><br>
+
         <label for="encrypt">Encrypt</label>
         <input type="radio" name="type" id="encrypt">
+
         <label for="decrypt">Decrypt</label>
         <input type="radio" name="type" id="decrypt">
         <br><br>
-        <input type="submit" value="Submit">
+
+        <input type="button" value="go!" onClick="js();">
     </form>
-    <p>The text input and buttons don't do anything (yet).</p>
+    <br><br><br>
+    <p>This currently just concatenates, full functionality will be added later</p>
+    <textarea id="outputText" name="outputText" readonly rows="6" cols="80"></textarea>
+
 </body>
 </html>
