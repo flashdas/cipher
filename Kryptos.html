@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kryptos Vigenère Cipher</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="ciphy.js"></script>
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body onload="k1(); kryptos();">
+    <h1>Kryptos </h1>
+    <p>This page contains miscellaneous ciphers used by 
+        <a href="https://math.ucsd.edu/~crypto/Projects/KarlWang/index2.html">
+        Kyrptos</a>. For the regular Vigenère cipher, see 
+        <a href="index.html">this page</a>.
+    <br>Note that Key 2 should not contain duplicate letters.</p>
+
+    <noscript><span class="redText">This page requires JavaScript to work, as GitHub Pages does 
+        <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#static-site-generators">not support server-side computation.</a></span></noscript>
+    <br><br>
+    <noscript><span class="redText">You can view the sourcecode of this page <a href="https://github.com/flashdas/cipher">here.</a></span></noscript>
+    
+    <h2>Kryptos parts 1 and 2:</h2>
+        <p>Kryptos uses two keys in its cipher. One is the standard Vigenère key, 
+            while the other is used to re-order the alphabet.
+        </p>
+        <br>
+        <form>
+            <input type="button" value="Kryptos part 1" onClick="k1();kryptos();">
+            <input type="button" value="Kryptos part 2" onClick="k2();kryptos();">
+            <br><br>
+
+            <label for="key1">Key 1: </label>
+            <input type="text" id="key1" name="key1" value="" onBlur="kryptos();">
+            <label for="key2">Key 2: </label>
+            <input type="text" id="key2" name="key2" value="" onBlur="kryptos();">
+            <input type="button" value="Swap Keys" onClick="swap();kryptos();">
+            <br><br>
+
+            <label for="alphabet">Alphabet created by Key 2: </label>
+            <textarea id="alphabet" name="outputText" readonly rows="1" cols="26"></textarea>
+           <br><br>
+    
+            <label for="cipherText">Input text:</label><br>
+            <textarea id="cipherText" name="cipherText" rows="8" cols="80" 
+            onBlur="kryptos();"></textarea>
+            <br><br>
+    
+            <label for="decrypt">Decrypt</label>
+            <input type="radio" name="type" id="decrypt" checked onClick="kryptos()">
+            <br>
+            <label for="encrypt">Encrypt</label>
+            <input type="radio" name="type" id="encrypt" onClick="kryptos()">
+            
+            
+        </form>
+        <br>
+        <label for="outputText">Output:</label><br>
+        <textarea id="outputText" name="outputText" readonly rows="8" cols="80"></textarea>
+        <br><br>
+
+
+    <h2>Kryptos part 3:</h2>
+    <p>Currently not implemented, See link above for guide.</p><br>
+
+    <h2>Kryptos part 4:</h2>
+    <p>At time of writting, not currently solved. Check 
+        <a href="https://elonka.com/kryptos/">https://elonka.com/kryptos/</a> 
+        for the most up to date info.
+    </p>
+</body>
+</html>

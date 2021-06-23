@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cipher</title>
+    <title>Vigenère Cipher</title>
     <link rel="stylesheet" href="styles.css">
     <script type="text/javascript" src="ciphy.js"></script>
     <link rel="icon" type="image/png" href="favicon.png">
@@ -12,32 +12,34 @@
 
 </head>
 
-<body onload="setUrlParams();javscr();">
+<body onload="setUrlParams();VigenereCipher();">
     <h1>A primitive Vigenère cipher thingy</h1>
+    <p> This is the <a href="">Standard Vigniere cipher</a> (one key).
+    For the kyrptos cipher, see <a href="Kryptos.html">this page</a>.</p>
     <p></p>
     <br>
     <form>
         <label for="cipherKey">Cipher Key: </label>
-        <input type="text" id="cipherKey" name="cipherKey" value="poetry" onBlur="javscr();">
+        <input type="text" id="cipherKey" name="cipherKey" value="poetry" onBlur="VigenereCipher();">
         <br><br>
         
         <label for="offset">Offset: </label>
-        <input type="number" id="offset" value=0 size=3 onclick="javscr();">
+        <input type="number" id="offset" value=0 size=3 onclick="VigenereCipher();">
         <!--<label for="offset">(leave this at zero unless the text breaks partway.)</label>-->
         <br><br>
 
         <label for="cipherText">Input text:</label><br>
-        <textarea id="cipherText" name="cipherText" rows="8" cols="80" onBlur="javscr();">wctxzqivimygcuabkfusemycggxarresvvychwrmychcyerlsgmgxqivimlltkmmymjhxavudfhlrlsbiovphhsijyiope</textarea>
+        <textarea id="cipherText" name="cipherText" rows="8" cols="80" onBlur="VigenereCipher();">wctxzqivimygcuabkfusemycggxarresvvychwrmychcyerlsgmgxqivimlltkmmymjhxavudfhlrlsbiovphhsijyiope</textarea>
         <br><br>
 
         <label for="decrypt">Decrypt</label>
-        <input type="radio" name="type" id="decrypt" checked onClick="javscr();">
+        <input type="radio" name="type" id="decrypt" checked onClick="VigenereCipher();">
         <br>
         <label for="encrypt">Encrypt</label>
-        <input type="radio" name="type" id="encrypt" onClick="javscr();">
+        <input type="radio" name="type" id="encrypt" onClick="VigenereCipher();">
         
         <br><br>
-        <input type="button" value="Go!" onClick="javscr();">
+        <input type="button" value="Go!" onClick="VigenereCipher();">
     </form>
     <br>
     <label for="outputText">Output:</label><br>

@@ -22,7 +22,8 @@ make website look pretty
 
 https://www.youtube.com/watch?v=QyFcl_Fba-k
 
-#### cipher:
+#### cipher links:
+https://math.ucsd.edu/~crypto/Projects/KarlWang/index2.html
 
 https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher
 
