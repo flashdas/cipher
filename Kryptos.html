@@ -27,6 +27,7 @@
         </p>
         <br>
         <form>
+            <input type="button" value="Clear" onClick="clr();kryptos();">
             <input type="button" value="Kryptos part 1" onClick="k1();kryptos();">
             <input type="button" value="Kryptos part 2" onClick="k2();kryptos();">
             <br><br>
@@ -43,7 +44,7 @@
            <br><br>
     
             <label for="cipherText">Input text:</label><br>
-            <textarea id="cipherText" name="cipherText" rows="8" cols="80" 
+            <textarea id="cipherText" name="cipherText" rows="12" cols="80" 
             onBlur="kryptos();"></textarea>
             <br><br>
     
@@ -57,7 +58,7 @@
         </form>
         <br>
         <label for="outputText">Output:</label><br>
-        <textarea id="outputText" name="outputText" readonly rows="8" cols="80"></textarea>
+        <textarea id="outputText" name="outputText" readonly rows="12" cols="80"></textarea>
         <br><br>
 
 

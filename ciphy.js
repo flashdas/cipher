@@ -59,7 +59,7 @@ function setUrlParams() {
 
 
 function kryptos(){
-    var key1 = document.getElementById("key1").value; console.log("key 1="+key1);
+    var key1 = document.getElementById("key1").value;
     var key2 = document.getElementById("key2").value.toLowerCase();
     var text = document.getElementById("cipherText").value;
     var d = 1; if (document.getElementById("decrypt").checked == true) {d = -1;} 
@@ -67,9 +67,15 @@ function kryptos(){
     for(let i = 0; i < key2.length ; i++) {
         alph = alph.replace(key2.substr(i, 1), "");
     }
-    alph = key2 + alph;
+    var prefix = key2.toLowerCase();
+    for(let i = 0; i < prefix.length ; i++) {
+        if (!(prefix[i] >"a" && prefix[i] < "z")) {
+            prefix = prefix.replace(prefix[i],"");
+            i--;
+        }
+    }
+    alph = prefix + alph;
     document.getElementById("alphabet").innerHTML = alph;
-    console.log("alph=" + alph);
 
     var letters = text.split("");
 
@@ -77,10 +83,8 @@ function kryptos(){
     for (let i = 0; i < shifts.length; i++) { 
         if (key1.toLowerCase()[i]  >= "a" && key1.toLowerCase()[i] <= "z") {
             shifts[i] = alph.indexOf(key1.toLowerCase()[i]);
-        } /*else {
-            shifts[i] = 0;
-        }//*/
-    }console.log("shifts="+shifts);
+        } 
+    }
     ///////////////////////////////////////////////////////////////
     
     var out = "";
@@ -99,7 +103,6 @@ function kryptos(){
         } else if (letters[i]  >= "A" && letters[i] <= "Z") {
             // dont forget to convert to/from upper case
             // temp = letter's number in alph
-     //       console.log("letters = " + letters + "  i="+i+"  j="+j);
             var temp = alph.indexOf(letters[i].toLowerCase());
 
             // increase temp by key1
@@ -111,22 +114,24 @@ function kryptos(){
         } else {
             j--;
         }
-        out = out + letters[i];
-        
-        
+        out = out + letters[i]; 
     }
- //   console.log("out = " + letters);
+
     document.getElementById("outputText").innerHTML = out;
-    //console.log("output: " + out);
-    /** */
+    
 }
 
+function clr(){
+    document.getElementById("key1").value = "";
+    document.getElementById("key2").value = "";
+    document.getElementById("cipherText").innerHTML ="";
+}
 function k1(){
     document.getElementById("key1").value = "PALIMPSEST";
     document.getElementById("key2").value = "KRYPTOS";
     document.getElementById("cipherText").innerHTML = 
     `EMUFPHZLRFAXYUSDJKZLDKRNSHGNFIVJ
-YQTQUXQBQVYUVLLTREVJYQTMKYRDMFD`
+YQTQUXQBQVYUVLLTREVJYQTMKYRDMFD`;
 }
 function k2(){
     document.getElementById("key1").value = "ABSCISSA";
@@ -143,7 +148,7 @@ FLGGTEZ?FKZBSFDQVGOGIPUFXHHDRKF
 FHQNTGPUAECNUVPDJMQCLQUMUNEDFQ
 ELZZVRRGKFFVOEEXBDMVPNFQXEZLGRE
 DNQFMPNZGLFLPMRJQYALMGNUVPDXVKP
-DQUMEBEDMHDAFMJGZNUPLGEWJLLAETG`
+DQUMEBEDMHDAFMJGZNUPLGEWJLLAETG`;
 }
 function swap(){
     var temp = document.getElementById("key1").value;
