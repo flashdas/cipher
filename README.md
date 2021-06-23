@@ -4,7 +4,7 @@ Personal project to learn git, git pages, and a little bit of the kryptos cipher
 https://flashdas.github.io/cipher/
 
 ToDo:
-simple static git page
+~~simple static git page~~
 dynamic git page (button and or input text box)
 write cipher en/decrypter function
 connect function to website
