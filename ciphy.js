@@ -1,6 +1,5 @@
 
 function javscr(){
-    console.log("js started...");
     var key = document.getElementById("cipherKey").value;
     var text = document.getElementById("cipherText").value;
     var d = 1;
@@ -40,13 +39,18 @@ function javscr(){
     }
 
     document.getElementById("outputText").innerHTML = out;
+    //console.log("output: " + out);
 }
 
 // Curstesy of https://stackoverflow.com/questions/14070105/pre-fill-form-field-via-url-in-html
 function setUrlParams() {
     var hashParams = window.location.hash.substr(1).split('&'); // substr(1) to remove the `#`
+
     for(var i = 0; i < hashParams.length; i++){
         var p = hashParams[i].split('=');
-        document.getElementById(p[0]).value = decodeURIComponent(p[1]);
-}
+        if (document.getElementById(p[0]) != null && decodeURIComponent(p[1]) != null) {
+            document.getElementById(p[0]).value = decodeURIComponent(p[1]);
+        }
+    }
+    //console.log("Loaded elements: "+ hashParams);
 }

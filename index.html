@@ -12,38 +12,39 @@
 
 </head>
 
-<body onload="setUrlParams();">
+<body onload="setUrlParams();javscr();">
     <h1>A primitive Vigenère cipher thingy</h1>
     <p></p>
     <br>
     <form>
-        <label for="cipherKey">Cipher Key:</label><br>
-        <input type="text" id="cipherKey" name="cipherKey" value="poetry">
+        <label for="cipherKey">Cipher Key: </label>
+        <input type="text" id="cipherKey" name="cipherKey" value="poetry" onBlur="javscr();">
         <br><br>
         
-        <label for="offset">Offset:</label>
+        <label for="offset">Offset: </label>
         <input type="number" id="offset" value=0 size=3 onclick="javscr();">
-        <label for="offset">(leave this at zero unless the text breaks partway.)</label>
+        <!--<label for="offset">(leave this at zero unless the text breaks partway.)</label>-->
         <br><br>
 
-        <label for="cipherText">Text:</label><br>
-        <textarea id="cipherText" name="cipherText" rows="6" cols="80">wctxzqivimygcuabkfusemycggxarresvvychwrmychcyerlsgmgxqivimlltkmmymjhxavudfhlrlsbiovphhsijyiope</textarea>
+        <label for="cipherText">Input text:</label><br>
+        <textarea id="cipherText" name="cipherText" rows="8" cols="80" onBlur="javscr();">wctxzqivimygcuabkfusemycggxarresvvychwrmychcyerlsgmgxqivimlltkmmymjhxavudfhlrlsbiovphhsijyiope</textarea>
         <br><br>
 
         <label for="decrypt">Decrypt</label>
-        <input type="radio" name="type" id="decrypt" checked>
+        <input type="radio" name="type" id="decrypt" checked onClick="javscr();">
         <br>
         <label for="encrypt">Encrypt</label>
-        <input type="radio" name="type" id="encrypt">
+        <input type="radio" name="type" id="encrypt" onClick="javscr();">
         
         <br><br>
         <input type="button" value="Go!" onClick="javscr();">
     </form>
-
     <br>
-    <textarea id="outputText" name="outputText" readonly rows="6" cols="80"></textarea>
+    <label for="outputText">Output:</label><br>
+    <textarea id="outputText" name="outputText" readonly rows="8" cols="80"></textarea>
     <br><br>
-    <noscript><span class="redText">This page requires JavaScript to work, as GitHub Pages does <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#static-site-generators">not support server-side computation.</a></span></noscript>
+    <noscript><span class="redText">This page requires JavaScript to work, as GitHub Pages does 
+        <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#static-site-generators">not support server-side computation.</a></span></noscript>
     <br><br>
     <noscript><span class="redText">You can view the sourcecode of this page <a href="https://github.com/flashdas/cipher">here.</a></span></noscript>
 
