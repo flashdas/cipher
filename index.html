@@ -5,52 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cipher</title>
     <link rel="stylesheet" href="styles.css">
-    <!--<script type="text/javascript" src="cipher.js"></script>-->
+    <<script type="text/javascript" src="ciphy.js"></script>
     <link rel="icon" type="image/png" href="favicon.png">
 
-    <script type="text/javascript">
-
-    function js(){
-        console.log("js started...");
-        var key = document.getElementById("cipherKey").value;
-        var text = document.getElementById("cipherText").value;
-        var d = 1;// differnece between encryption 
-        if (document.getElementById("decrypt").checked == true) {
-            d = -1;
-        } else {
-            d = 1;
-        }
-        var letters = text.toLowerCase().split("").map(x=>x.charCodeAt(0));
-        var shifts = key.toLowerCase().split("").map(x=>x.charCodeAt(0));
-        var out = ""
-        for (let i = 0; i < shifts.length; i++) { 
-            if (shifts[i]  >= "a".charCodeAt(0) && shifts[i] <= "z".charCodeAt(0)) {
-                shifts[i] -= "a".charCodeAt(0);
-            } else {
-                shifts[i] = 0;
-            }
-        }
-        var returnOffset = 0;
-        for (let i = 0; i < letters.length; i++) { 
-            if (letters[i]  >= "a".charCodeAt(0) && letters[i] <= "z".charCodeAt(0)) {
-                var temp = letters[i] - "a".charCodeAt(0);
-                var sI = (i-returnOffset-document.getElementById("offset").value)%shifts.length
-                temp = (temp + d*shifts[sI] +26) % 26;
-                letters[i] = temp + "a".charCodeAt(0);
-            }
-            out = out + String.fromCharCode(letters[i]);
-            if (letters[i] == 10) {
-                returnOffset += 1;
-            }
-        }
-
-        console.log(letters);
-        
-        //var out = letters.join();
-        console.log(out);
-        document.getElementById("outputText").innerHTML = out;
-    }
-    </script>
 
 </head>
 
@@ -64,7 +21,7 @@
         <br><br>
         
         <label for="offset">Offset:</label>
-        <input type="number" id="offset" value=0 size=3 onclick="js();">
+        <input type="number" id="offset" value=0 size=3 onclick="javscr();">
         <label for="offset">(leave this at zero unless the text breaks partway.)</label>
         <br><br>
 
@@ -79,7 +36,7 @@
         <input type="radio" name="type" id="encrypt">
         
         <br><br>
-        <input type="button" value="Go!" onClick="js();">
+        <input type="button" value="Go!" onClick="javscr();">
     </form>
 
     <br>
