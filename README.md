@@ -3,7 +3,7 @@ Personal project to learn git, git pages, and mess around with a cipher
 
 https://flashdas.github.io/cipher/
 
-####ToDo:
+#### ToDo:
 
 ~~simple static git page~~
 
@@ -18,11 +18,11 @@ write a good cipher en/decrypter function
 make website look pretty
 
 
-####github pages guide:
+#### github pages guide:
 
 https://www.youtube.com/watch?v=QyFcl_Fba-k
 
-####cipher:
+#### cipher:
 
 https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher
 
