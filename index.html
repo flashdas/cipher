@@ -5,9 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cipher</title>
     <link rel="stylesheet" href="styles.css">
+    <!--
+    <link rel="icon" type="image/png" href="favicon.png">
+    -->
 </head>
 <body>
     <h1>h1 text here</h1>
-    <p>paragraph stuff here</p>
+    <p>Hello world!</p>
+    <br><br>
+    <form>
+        <label for="cipherKey">Cipher Key:</label>
+        <input type="text" id="cipherKey" name="cipherKey">
+        <br><br>
+        <label for="cipherText">Cipher text:</label>
+        <textarea id="cipherText" name="cipherText"></textarea>
+        <br><br>
+        <label for="encrypt">Encrypt</label>
+        <input type="radio" name="type" id="encrypt">
+        <label for="decrypt">Decrypt</label>
+        <input type="radio" name="type" id="decrypt">
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <p>The text input and buttons don't do anything (yet).</p>
 </body>
 </html>
