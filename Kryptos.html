@@ -10,21 +10,28 @@
 </head>
 
 <body onload="k1(); setUrlParams(); kryptos();">
+    <div class="topnav">
+        <a href="home.html">Home</a>
+        <a href="Vigenere.html">Vigenere</a>
+        <a class="active" href="Kryptos.html">Kryptos</a>
+    </div>
+    <div class="mainText">
+
     <h1>Kryptos </h1>
     <p>This page contains the pseudo Vigenere cipher used by 
         <a href="https://math.ucsd.edu/~crypto/Projects/KarlWang/index2.html">
-        Kyrptos</a>. For the regular Vigenère cipher, see <a href="Vigenere.html">this page</a>.
+        Kyrptos</a>. 
     </p>
 
     <noscript><span class="redText">This page requires JavaScript to work, as GitHub Pages does 
-        <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#static-site-generators">not support server-side computation.</a></span></noscript>
+        <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#static-site-generators">not support server-side computation.</a>
     <br><br>
-    <noscript><span class="redText">You can view the sourcecode of this page <a href="https://github.com/flashdas/cipher">here.</a></span></noscript>
+    You can view the sourcecode of this page <a href="https://github.com/flashdas/cipher">here.</a></span></noscript>
     
     <h2><a id="Kyrptos1_2">Kryptos parts 1 and 2:</a></h2>
         <p>Kryptos uses two keys in its cipher. One is the standard Vigenère key, 
-            while the other is used to re-order the alphabet. Leaving key 2 blank will use the standard
-            Vigenere chipher.
+            while the other is used to re-order the alphabet. Leaving key 2 blank will 
+            use the standard Vigenere chipher.
         </p>
         <br>
         <form>
@@ -55,9 +62,10 @@
             <label for="encrypt">Encrypt</label>
             <input type="radio" name="type" id="encrypt" onClick="kryptos()">
             
-            
         </form>
-        <br>
+
+        <input type="button" value="Swap" onClick="swapText();kryptos();">
+        <br><br>
         <label for="outputText">Output:</label><br>
         <textarea id="outputText" name="outputText" readonly rows="12" cols="80"></textarea>
         <br><br>
@@ -71,5 +79,6 @@
         <a href="https://elonka.com/kryptos/">https://elonka.com/kryptos/</a> 
         for the most up to date info.
     </p>
+    </div>
 </body>
 </html>

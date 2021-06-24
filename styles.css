@@ -1,9 +1,40 @@
 body {
-    margin: 4%;
     background: lightgrey;
+    margin: 0;
+    padding: 0;
 }
-span.redText { color:red}
+div.mainText {
+    margin: 4%;
+}
+
+span.redText { 
+    color:red 
+}
 
 textarea {
     font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
+}
+
+.topnav {
+    background-color: rgb(50, 50, 50);
+    overflow: hidden;
+}
+
+.topnav a{
+    margin: 0;
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 12px 16px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.topnav a:hover {
+     background-color: rgb(71, 71, 71); 
+}
+
+.topnav a.active {
+    background-color: #4400ff;
+    color: white;
 }
