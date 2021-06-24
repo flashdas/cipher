@@ -18,7 +18,7 @@ function copyUrl() {
     var el = document.getElementsByClassName("shareable");
     console.log("el = "); console.log(el);
     for (let i = 0; i < el.length; i++) {
-        out += el[i].id + "=" + el[i].value + "&";
+        out += encodeURIComponent(el[i].id) + "=" + encodeURIComponent(el[i].value) + "&";
     }
 
     navigator.clipboard.writeText(out);
