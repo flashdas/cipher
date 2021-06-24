@@ -122,9 +122,23 @@ function kryptos(){
 }
 
 function clr(){
-    document.getElementById("key1").value = "";
-    document.getElementById("key2").value = "";
+    if (document.getElementById("cipherKey") != null) { // Vignere
+        document.getElementById("cipherKey").value = "";
+        document.getElementById("offset").value = 0;
+    } else if (document.getElementById("key1") != null) { // Kryptos
+        document.getElementById("key1").value = "";
+        document.getElementById("key2").value = "";
+    }
     document.getElementById("cipherText").innerHTML ="";
+    document.getElementById("decrypt").checked = true;
+}
+function swapText(){
+    if (document.getElementById("decrypt").checked == true) {
+        document.getElementById("encrypt").checked = true;
+    } else {
+        document.getElementById("decrypt").checked = true;
+    }
+    document.getElementById("cipherText").innerHTML = document.getElementById("outputText").innerHTML;
 }
 function k1(){
     document.getElementById("key1").value = "PALIMPSEST";
@@ -150,7 +164,26 @@ ELZZVRRGKFFVOEEXBDMVPNFQXEZLGRE
 DNQFMPNZGLFLPMRJQYALMGNUVPDXVKP
 DQUMEBEDMHDAFMJGZNUPLGEWJLLAETG`;
 }
-function swap(){
+function v1() {
+    clr();
+    document.getElementById("cipherKey").value = "poetry";
+    document.getElementById("cipherText").innerHTML =
+    `Wctx zq ivi mygcu abkf usemycgg -
+Xarr esvvych wr myc hcye -
+Rls gmgxq ivi mllt kmmymjh xav udfhl -
+Rls biovp hhsij - yi ope -
+
+Rls gaxvrtgx - be rws Ktcc - xg lxrps -
+Orw jmgs qnjr qs xav qicvf -
+Kfph ghljs oftjf ivi ezrizi Uzps
+Hltk itdx lf kpbc prpb -
+
+W’zx ycpfh bk gc hlx tfxzpxjr aorw -
+Rls cr myc hhvteetgx Lvy -
+Nsx - gvttf - mg Vvififzrn,
+Wx tjitr e visbp - sy dc.`;
+}
+function swapKeys(){
     var temp = document.getElementById("key1").value;
     document.getElementById("key1").value = document.getElementById("key2").value;
     document.getElementById("key2").value = temp;
