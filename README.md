@@ -3,6 +3,10 @@ Personal project to learn git, git pages, and mess around with a cipher
 
 https://flashdas.github.io/cipher/
 
+https://flashdas.github.io/cipher/Vigenere.html
+
+https://flashdas.github.io/cipher/Kryptos.html
+
 #### ToDo:
 
 ~~simple static git page~~
@@ -29,9 +33,3 @@ https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher
 
 https://www.instructables.com/HOW-TO-SOLVE-SANBORNS-KRYPTOS-PART-1-THE-COORDINAT/
 
-
-Sample cipher:
-```
-poetry
-wctxzqivimygcuabkfusemycggxarresvvychwrmychcyerlsgmgxqivimlltkmmymjhxavudfhlrlsbiovphhsijyiope
-```
