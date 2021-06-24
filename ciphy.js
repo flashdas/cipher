@@ -32,6 +32,7 @@ function copyUrl() {
 }
 
 function VigenereCipher(){
+    document.getElementById("shareText").innerHTML = "";
     var key = document.getElementById("cipherKey").value;
     var text = document.getElementById("cipherText").value;
     var d = 1;
@@ -77,6 +78,7 @@ function VigenereCipher(){
 }
 
 function kryptos(){
+    document.getElementById("shareText").innerHTML = "";
     var key1 = document.getElementById("key1").value;
     var key2 = document.getElementById("key2").value.toLowerCase();
     var text = document.getElementById("cipherText").value;
