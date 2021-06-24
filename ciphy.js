@@ -1,4 +1,36 @@
 
+
+// Curstesy of https://stackoverflow.com/questions/14070105/pre-fill-form-field-via-url-in-html
+function setUrlParams() {
+    var hashParams = window.location.hash.substr(1).split('&'); // substr(1) to remove the `#`
+    for(var i = 0; i < hashParams.length; i++){
+        var p = hashParams[i].split('=');
+        if (document.getElementById(p[0]) != null && decodeURIComponent(p[1]) != null) {
+            document.getElementById(p[0]).value = decodeURIComponent(p[1]);
+        }
+    }
+}
+
+function copyUrl() {
+    var out = window.location.href + "#";
+    var out = out.substring(0, out.indexOf('#')) + "#";
+    
+    var el = document.getElementsByClassName("shareable");
+    console.log("el = "); console.log(el);
+    for (let i = 0; i < el.length; i++) {
+        out += el[i].id + "=" + el[i].value + "&";
+    }
+
+    navigator.clipboard.writeText(out);
+
+    document.getElementById("shareText").innerHTML = "Copied url to clipboard!";
+    if (document.getElementById("encrypt").checked) {
+        document.getElementById("shareText").innerHTML += "<span class=\"redText\">" +
+        " WARNING: The encrypt button is bugged and will not be shared in your link." +
+        "</span>";
+    }
+}
+
 function VigenereCipher(){
     var key = document.getElementById("cipherKey").value;
     var text = document.getElementById("cipherText").value;
@@ -40,23 +72,9 @@ function VigenereCipher(){
         }
     }
 
-    document.getElementById("outputText").innerHTML = out;
+    document.getElementById("outputText").value = out;
     //console.log("output: " + out);
 }
-
-// Curstesy of https://stackoverflow.com/questions/14070105/pre-fill-form-field-via-url-in-html
-function setUrlParams() {
-    var hashParams = window.location.hash.substr(1).split('&'); // substr(1) to remove the `#`
-
-    for(var i = 0; i < hashParams.length; i++){
-        var p = hashParams[i].split('=');
-        if (document.getElementById(p[0]) != null && decodeURIComponent(p[1]) != null) {
-            document.getElementById(p[0]).value = decodeURIComponent(p[1]);
-        }
-    }
-    //console.log("Loaded elements: "+ hashParams);
-}
-
 
 function kryptos(){
     var key1 = document.getElementById("key1").value;
@@ -75,7 +93,7 @@ function kryptos(){
         }
     }
     alph = prefix + alph;
-    document.getElementById("alphabet").innerHTML = alph;
+    document.getElementById("alphabet").value = alph;
 
     var letters = text.split("");
 
@@ -117,7 +135,7 @@ function kryptos(){
         out = out + letters[i]; 
     }
 
-    document.getElementById("outputText").innerHTML = out;
+    document.getElementById("outputText").value = out;
     
 }
 
@@ -129,28 +147,35 @@ function clr(){
         document.getElementById("key1").value = "";
         document.getElementById("key2").value = "";
     }
-    document.getElementById("cipherText").innerHTML ="";
+    document.getElementById("cipherText").value ="";
     document.getElementById("decrypt").checked = true;
 }
+
+function swapKeys(){
+    var temp = document.getElementById("key1").value;
+    document.getElementById("key1").value = document.getElementById("key2").value;
+    document.getElementById("key2").value = temp;
+}
 function swapText(){
+    document.getElementById("cipherText").value = document.getElementById("outputText").value ;
     if (document.getElementById("decrypt").checked == true) {
         document.getElementById("encrypt").checked = true;
     } else {
         document.getElementById("decrypt").checked = true;
     }
-    document.getElementById("cipherText").innerHTML = document.getElementById("outputText").innerHTML;
 }
+
 function k1(){
     document.getElementById("key1").value = "PALIMPSEST";
     document.getElementById("key2").value = "KRYPTOS";
-    document.getElementById("cipherText").innerHTML = 
+    document.getElementById("cipherText").value = 
     `EMUFPHZLRFAXYUSDJKZLDKRNSHGNFIVJ
 YQTQUXQBQVYUVLLTREVJYQTMKYRDMFD`;
 }
 function k2(){
     document.getElementById("key1").value = "ABSCISSA";
     document.getElementById("key2").value = "KRYPTOS";
-    document.getElementById("cipherText").innerHTML = 
+    document.getElementById("cipherText").value = 
     `VFPJUDEEHZWETZYVGWHKKQETGFQJNCE
 GGWHKK?DQMCPFQZDQMMIAGPFXHQRLG
 TIMVMZJANQLVKQEDAGDVFRPJUNGEUNA
@@ -167,7 +192,7 @@ DQUMEBEDMHDAFMJGZNUPLGEWJLLAETG`;
 function v1() {
     clr();
     document.getElementById("cipherKey").value = "poetry";
-    document.getElementById("cipherText").innerHTML =
+    document.getElementById("cipherText").value =
     `Wctx zq ivi mygcu abkf usemycgg -
 Xarr esvvych wr myc hcye -
 Rls gmgxq ivi mllt kmmymjh xav udfhl -
@@ -182,9 +207,4 @@ W’zx ycpfh bk gc hlx tfxzpxjr aorw -
 Rls cr myc hhvteetgx Lvy -
 Nsx - gvttf - mg Vvififzrn,
 Wx tjitr e visbp - sy dc.`;
-}
-function swapKeys(){
-    var temp = document.getElementById("key1").value;
-    document.getElementById("key1").value = document.getElementById("key2").value;
-    document.getElementById("key2").value = temp;
 }

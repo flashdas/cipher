@@ -25,22 +25,23 @@
     Standard Vigniere cipher</a> (one key). For the kyrptos cipher, see 
     <a href="Kryptos.html">this page</a>.</p>
     <br>
-    <form>
+    <form id="form">
         <input type="button" value="Clear" onClick="clr();VigenereCipher();">
         <input type="button" value="Example" onClick="v1();VigenereCipher();">
         <br><br>
 
         <label for="cipherKey">Cipher Key: </label>
-        <input type="text" id="cipherKey" name="cipherKey" onBlur="VigenereCipher();">
+        <input type="text" id="cipherKey" name="cipherKey" onBlur="VigenereCipher();" class= "shareable">
         <br><br>
         
         <label for="offset">Offset: </label>
-        <input type="number" id="offset" value=0 size=3 onclick="VigenereCipher();">
+        <input type="number" id="offset" value=0 size=3 onclick="VigenereCipher();" class= "shareable">
         <!--<label for="offset">(leave this at zero unless the text breaks partway.)</label>-->
         <br><br>
 
         <label for="cipherText">Input text:</label><br>
-        <textarea id="cipherText" name="cipherText" rows="8" cols="80" onBlur="VigenereCipher();"></textarea>
+        <textarea id="cipherText" name="cipherText" rows="8" cols="80" onBlur="VigenereCipher();"
+         class= "shareable"></textarea>
         <br><br>
 
         <label for="decrypt">Decrypt</label>
@@ -52,6 +53,8 @@
         <br><br>
         <input type="button" value="Go!" onClick="VigenereCipher();">
         <input type="button" value="Swap" onClick="swapText();VigenereCipher();">
+        <input type="button" value="Share to clipboard" onClick="copyUrl();">
+        <a id="shareText"></a>
     </form>
     <br>
     <label for="outputText">Output:</label><br>
