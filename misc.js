@@ -1,3 +1,9 @@
+//https://monc.se/kitchen/152/avoiding-flickering-in-jquery/
+document.write('<style type="text/css">body{display:none}</style>');
+jQuery(function($) {
+$('body').css('display','block');
+});
+
 
 //https://stackoverflow.com/questions/39447411/how-to-load-nav-menu-from-an-external-file-no-wamp-all-code-must-be-browser
 // IDK how to get this to work

@@ -21,7 +21,6 @@ write a good cipher en/decrypter function
 
 make website look pretty
 
-fix menu flickering on page load (caused by jquery, but I don't want to hide the page and then show after javascript because that would break the website if js is disabled in browser)
 
 
 #### github pages guide:
