@@ -19,55 +19,60 @@
         <a href="menu.html">Navigation bar that normally loads via javascript</a>
     </div>
 
+    
 
     <div class="mainText">
 
-    <h1>A primitive Vigenère cipher thingy</h1>
-    <p> This is the <a href="https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher">
-    Standard Vigniere cipher</a> (one key). For the kyrptos cipher, see 
-    <a href="Kryptos.html">this page</a>.</p>
-    <br>
-    <form id="form">
-        <input type="button" value="Clear" onClick="clr();VigenereCipher();">
-        <input type="button" value="Example" onClick="v1();VigenereCipher();">
-        <br><br>
+        <noscript>
+            <span class="redText"><br>This page requires JavaScript to work, as
+                <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#static-site-generators">
+                GitHub Pages</a> does not support server-side computation.
+            <br><br>
+            You can view the sourcecode of this page <a href="https://github.com/flashdas/cipher">here.</a></span>
+        </noscript>
 
-        <label for="cipherKey">Cipher Key: </label>
-        <input type="text" id="cipherKey" name="cipherKey" onBlur="VigenereCipher();" class= "shareable">
-        <br><br>
-        
-        <label for="offset">Offset: </label>
-        <input type="number" id="offset" value=0 size=3 onclick="VigenereCipher();" class= "shareable">
-        <!--<label for="offset">(leave this at zero unless the text breaks partway.)</label>-->
-        <br><br>
-
-        <label for="cipherText">Input text:</label><br>
-        <textarea id="cipherText" name="cipherText" rows="8" cols="80" onBlur="VigenereCipher();"
-         class= "shareable"></textarea>
-        <br><br>
-
-        <label for="decrypt">Decrypt</label>
-        <input type="radio" name="type" id="decrypt" checked onClick="VigenereCipher();">
+        <h1>A primitive Vigenère cipher thingy</h1>
+        <p> This is the <a href="https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher">
+        Standard Vigniere cipher</a> (one key). For the kyrptos cipher, see 
+        <a href="Kryptos.html">this page</a>.</p>
         <br>
-        <label for="encrypt">Encrypt</label>
-        <input type="radio" name="type" id="encrypt" onClick="VigenereCipher();">
-        
+        <form id="form">
+            <input type="button" value="Clear" onClick="clr();VigenereCipher();">
+            <input type="button" value="Example" onClick="v1();VigenereCipher();">
+            <br><br>
+
+            <label for="cipherKey">Cipher Key: </label>
+            <input type="text" id="cipherKey" name="cipherKey" onBlur="VigenereCipher();" class= "shareable">
+            <br><br>
+            
+            <label for="offset">Offset: </label>
+            <input type="number" id="offset" value=0 size=3 onclick="VigenereCipher();" class= "shareable">
+            <!--<label for="offset">(leave this at zero unless the text breaks partway.)</label>-->
+            <br><br>
+
+            <label for="cipherText">Input text:</label><br>
+            <textarea id="cipherText" name="cipherText" rows="8" cols="80" onBlur="VigenereCipher();"
+            class= "shareable"></textarea>
+            <br><br>
+
+            <label for="decrypt">Decrypt</label>
+            <input type="radio" name="type" id="decrypt" checked onClick="VigenereCipher();">
+            <br>
+            <label for="encrypt">Encrypt</label>
+            <input type="radio" name="type" id="encrypt" onClick="VigenereCipher();">
+            
+            <br><br>
+            <input type="button" value="Go!" onClick="VigenereCipher();">
+            <input type="button" value="Swap" onClick="swapText();VigenereCipher();">
+            <input type="button" value="Share to clipboard" onClick="copyUrl();">
+            <a id="shareText"></a>
+        </form>
+        <br>
+        <label for="outputText">Output:</label><br>
+        <textarea id="outputText" name="outputText" readonly rows="8" cols="80"></textarea>
         <br><br>
-        <input type="button" value="Go!" onClick="VigenereCipher();">
-        <input type="button" value="Swap" onClick="swapText();VigenereCipher();">
-        <input type="button" value="Share to clipboard" onClick="copyUrl();">
-        <a id="shareText"></a>
-    </form>
-    <br>
-    <label for="outputText">Output:</label><br>
-    <textarea id="outputText" name="outputText" readonly rows="8" cols="80"></textarea>
-    <br><br>
 
-    <noscript><span class="redText">This page requires JavaScript to work, as GitHub Pages does 
-        <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#static-site-generators">not support server-side computation.</a>
-    <br><br>
-    You can view the sourcecode of this page <a href="https://github.com/flashdas/cipher">here.</a></span></noscript>
-
+    
     </div>
 
 

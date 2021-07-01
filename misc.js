@@ -1,4 +1,5 @@
 //https://monc.se/kitchen/152/avoiding-flickering-in-jquery/
+// This makes pages load signifigating slower, but fixes navbar flickering on load
 document.write('<style type="text/css">body{display:none}</style>');
 jQuery(function($) {
 $('body').css('display','block');
