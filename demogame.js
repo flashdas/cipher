@@ -27,6 +27,22 @@ function mainLoop() {
         requestAnimationFrame(mainLoop);
     }
 }
+function togglePause() {
+    if (paused) {
+        resumeGame();
+    } else {
+        pauseGame();
+    }
+}
+function pauseGame() {
+    document.getElementById("pauseLabel").innerHTML = "Game is Paused";
+    paused = true;
+}
+function resumeGame() {
+    paused = false;
+    document.getElementById("pauseLabel").innerHTML = "";
+    mainLoop();
+}
 
 function inputs() {
     if (downPressed) { y += speed; }

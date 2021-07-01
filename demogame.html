@@ -33,13 +33,16 @@
             youtube tutorial</a>.
         </p>
 
-
-        <canvas id="gameCanvas" width="800" height="600" style="display:block"></canvas>
+        <input type="button" value="Pause" onClick="togglePause();">
+        <label for="button" id="pauseLabel"></label>
+        <br>
+        <canvas id="gameCanvas" width="800" height="600" style="display:block"
+        onclick="resumeGame();"></canvas>
         <script type="text/javascript" src="demogame.js"></script>
         
 
         <br>
-        <textarea id="inputText" onBlur="" class="shareable"
+        <textarea id="inputText" onclick="pauseGame();" onBlur="" class="shareable"
         style="color:darkgreen; background-color: lightgrey; border:none; resize:none"
         ></textarea>
         
