@@ -26,29 +26,18 @@ function loadNav() {
 // https://stackoverflow.com/questions/44502243/single-navigation-bar-across-website
 $(function() {
     console.log("if #navigation exists, look for menu.html");
-    $("#navigation").load("menu.html", function( response, status, xhr ) {
-        if ( status == "error" ) {
-            alert( "Sorry but there was an error: " + xhr.status + " " + xhr.statusText );
-        }
-    });
-    debugger;
-});
-
-// https://stackoverflow.com/questions/39447411/how-to-load-nav-menu-from-an-external-file-no-wamp-all-code-must-be-browser
-$(function() {
-
-    $("#nav").load("menu.html");
-
+    $("#SiteNavigation").load("menu.html");
+    
+    // https://stackoverflow.com/questions/39447411/how-to-load-nav-menu-from-an-external-file-no-wamp-all-code-must-be-browser
     function activeNav() {
         var pgurl = window.location.href.substr(window.location.href.lastIndexOf("/")+1);
-         $("#nav ul li a").each(function(){
+         $("#SiteNavigation a").each(function(){
               if($(this).attr("href") == pgurl || $(this).attr("href") == '' )
               $(this).addClass("active");
          });
     }
-
     setTimeout(function() {
         activeNav();
     }, 100);
-
+    
 });
