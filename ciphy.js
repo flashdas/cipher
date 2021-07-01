@@ -16,7 +16,6 @@ function copyUrl() {
     var out = out.substring(0, out.indexOf('#')) + "#";
     
     var el = document.getElementsByClassName("shareable");
-    console.log("el = "); console.log(el);
     for (let i = 0; i < el.length; i++) {
         out += encodeURIComponent(el[i].id) + "=" + encodeURIComponent(el[i].value) + "&";
     }
@@ -74,7 +73,6 @@ function VigenereCipher(){
     }
 
     document.getElementById("outputText").value = out;
-    //console.log("output: " + out);
 }
 
 function kryptos(){
