@@ -33,3 +33,5 @@ https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher
 
 https://www.instructables.com/HOW-TO-SOLVE-SANBORNS-KRYPTOS-PART-1-THE-COORDINAT/
 
+https://www.dcode.fr/vigenere-cipher
+

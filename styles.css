@@ -38,3 +38,7 @@ textarea {
     background-color: #4400ff;
     color: white;
 }
+#nav ul li a.active {
+    color: #ff0000;
+    font-weight: bold;
+}
