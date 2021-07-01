@@ -4,7 +4,7 @@ document.write('<style type="text/css">body{display:none}</style>');
 jQuery(function($) {
 $('body').css('display','block');
 });
-
+//*/
 
 // https://stackoverflow.com/questions/44502243/single-navigation-bar-across-website
 $(function() {
